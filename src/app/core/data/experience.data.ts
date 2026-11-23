@@ -50,7 +50,7 @@ export const OFICINA_VIRTUAL: Experience = {
   title: 'Oficina Virtual',
   codename: 'Chubot',
   company: 'Proyecto propio · Osmaritech',
-  period: '2026 — actualidad', // [TODO] ajusta fechas
+  period: '2026 — actualidad',
   role: 'Arquitectura y desarrollo full stack',
   summary:
     'Un orquestador de IA con un equipo de agentes para el negocio. Le hablas a Chubot por Telegram o desde el panel, él divide la instrucción en tareas y se las asigna a agentes especializados. Lo que entregan aparece en un tablero tipo Trello y nada se da por terminado hasta que un humano lo aprueba.',

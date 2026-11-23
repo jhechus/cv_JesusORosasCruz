@@ -17,7 +17,7 @@ node scripts/generate-illustrations.mjs     # regenera las ilustraciones SVG de 
 
 | Archivo | Qué contiene |
 |---|---|
-| `src/app/core/data/profile.data.ts` | Nombre, correo, redes, resumen, valores, trayectoria. Todo lo marcado `[TODO]` |
+| `src/app/core/data/profile.data.ts` | Nombre, correo, redes, resumen, valores y trayectoria |
 | `src/app/core/data/experience.data.ts` | Experiencias (hoy: Oficina Virtual), agentes, pipeline, capas de seguridad |
 | `src/app/core/data/skills.data.ts` | Áreas de habilidades y niveles |
 | `public/images/avatar.svg` | Retrato ilustrado: reemplázalo por tu foto (mismo nombre o cambia la ruta) |

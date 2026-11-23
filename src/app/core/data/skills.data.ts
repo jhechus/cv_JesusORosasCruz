@@ -12,7 +12,6 @@ export interface SkillGroup {
   skills: Skill[];
 }
 
-/** [TODO] Ajusta niveles a tu criterio. */
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     id: 'backend',

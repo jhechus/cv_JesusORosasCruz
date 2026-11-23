@@ -1,5 +1,5 @@
 /**
- * Datos personales del CV. EDITA ESTE ARCHIVO: todo lo que dice [TODO] es un placeholder.
+ * Datos personales del CV.
  * Las páginas leen de aquí, así que no hace falta tocar plantillas para actualizar el CV.
  */
 export interface Profile {
@@ -13,22 +13,20 @@ export interface Profile {
   phone: string;
   github: string;
   linkedin: string;
-  cvPdf: string | null;
   summary: string[];
 }
 
 export const PROFILE: Profile = {
-  name: 'Tu Nombre Apellido', // [TODO]
-  shortName: 'Tu Nombre', // [TODO]
+  name: 'Jesus Osmari Rosas Cruz',
+  shortName: 'Jesus Rosas',
   role: 'Desarrollador Full Stack',
   tagline: 'Construyo sistemas web de punta a punta: APIs en NestJS, paneles en Angular y datos en Postgres. Últimamente, equipos de agentes de IA que trabajan con supervisión humana.',
   location: 'México',
   availability: 'Disponible para proyectos y posiciones remotas',
-  email: 'tu-correo@ejemplo.com', // [TODO]
-  phone: '+52 55 1234 5678', // [TODO]
-  github: 'https://github.com/tu-usuario', // [TODO]
-  linkedin: 'https://www.linkedin.com/in/tu-usuario', // [TODO]
-  cvPdf: null, // [TODO] p. ej. '/cv.pdf' (ponlo en /public)
+  email: 'jess.osm1412@gmail.com',
+  phone: '+52 55 4782 4383',
+  github: 'https://github.com/jhechus',
+  linkedin: 'https://www.linkedin.com/in/jesusrosascruz/',
   summary: [
     'Soy desarrollador full stack con foco en TypeScript. Trabajo con NestJS en el backend, Angular en el frontend y Postgres (Supabase o Prisma) como base de datos, y despliego con Docker en Railway o Vercel.',
     'Me gusta llevar un proyecto entero: modelar los datos, diseñar la API, construir la interfaz y dejarlo corriendo en producción con pruebas, healthchecks y documentación de despliegue.',
@@ -55,9 +53,6 @@ export interface TimelineItem {
   text: string;
 }
 
-/** [TODO] Ajusta fechas y añade estudios / trabajos anteriores. */
 export const TIMELINE: TimelineItem[] = [
   { year: '2026', title: 'Oficina Virtual · Chubot', text: 'Orquestador de agentes de IA con NestJS, Angular 19, Supabase y Claude. Desplegado en Railway con Docker.' },
-  { year: '2025', title: 'Proyectos full stack para clientes', text: 'Marketplace, sistemas de pedidos y sitios para negocios con NestJS + Prisma, Angular y Next.js.' },
-  { year: '20XX', title: 'Formación', text: '[TODO] Tu carrera, bootcamp o certificaciones.' },
 ];
