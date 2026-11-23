@@ -19,7 +19,7 @@ export const routes: Routes = [
   {
     path: 'experiencia',
     title: t('Experiencia'),
-    data: { description: 'Proyectos y experiencia profesional.' },
+    data: { description: 'Experiencia profesional y proyectos en producción.' },
     loadComponent: () => import('./pages/experience/experience.page'),
   },
   {
@@ -37,7 +37,7 @@ export const routes: Routes = [
   {
     path: 'contacto',
     title: t('Contacto'),
-    data: { description: 'Escríbeme para proyectos o posiciones.' },
+    data: { description: 'Contacto para vacantes y entrevistas de trabajo.' },
     loadComponent: () => import('./pages/contact/contact.page'),
   },
   {

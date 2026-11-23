@@ -30,6 +30,8 @@ import { SectionHeadingComponent } from '../../shared/ui/section-heading.compone
           <div data-reveal-item><dt class="mono">Base</dt><dd>{{ profile.location }}</dd></div>
           <div data-reveal-item><dt class="mono">Stack</dt><dd>NestJS · Angular · Postgres</dd></div>
           <div data-reveal-item><dt class="mono">Idiomas</dt><dd>Español · Inglés técnico</dd></div>
+          <div data-reveal-item><dt class="mono">Busco</dt><dd>Empleo formal de tiempo completo</dd></div>
+          <div data-reveal-item><dt class="mono">Incorporación</dt><dd>A convenir</dd></div>
         </dl>
       </div>
     </section>

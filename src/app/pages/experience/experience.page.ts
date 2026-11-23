@@ -59,7 +59,7 @@ import { ChipComponent } from '../../shared/ui/tech-chip.component';
         <aside class="xp-side"><span class="mono idx">+</span></aside>
         <div class="card slot">
           <app-icon name="sparkles" [size]="28" />
-          <p class="display">Tu proyecto podría ser el siguiente.</p>
+          <p class="display">El siguiente capítulo puede ser en tu equipo.</p>
           <a routerLink="/contacto" class="btn btn-ghost btn-small" appMagnetic>Hablemos</a>
         </div>
       </article>

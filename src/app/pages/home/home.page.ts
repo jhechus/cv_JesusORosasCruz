@@ -31,7 +31,7 @@ export default class HomePage {
     { path: '/sobre-mi', index: '01', title: 'Sobre mí', text: 'Cómo trabajo y mi trayectoria.', icon: 'user' },
     { path: '/experiencia', index: '02', title: 'Experiencia', text: 'Oficina Virtual, caso a fondo.', icon: 'briefcase' },
     { path: '/habilidades', index: '03', title: 'Habilidades', text: 'Stack por áreas y nivel.', icon: 'layers' },
-    { path: '/contacto', index: '04', title: 'Contacto', text: 'Hablemos de tu proyecto.', icon: 'send' },
+    { path: '/contacto', index: '04', title: 'Contacto', text: 'Hablemos de una vacante.', icon: 'send' },
   ];
 
   constructor() {

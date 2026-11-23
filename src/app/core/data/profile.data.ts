@@ -22,14 +22,14 @@ export const PROFILE: Profile = {
   role: 'Desarrollador Full Stack',
   tagline: 'Construyo sistemas web de punta a punta: APIs en NestJS, paneles en Angular y datos en Postgres. Últimamente, equipos de agentes de IA que trabajan con supervisión humana.',
   location: 'México',
-  availability: 'Disponible para proyectos y posiciones remotas',
+  availability: 'Buscando empleo de tiempo completo como desarrollador full stack',
   email: 'jess.osm1412@gmail.com',
   phone: '+52 55 4782 4383',
   github: 'https://github.com/jhechus',
   linkedin: 'https://www.linkedin.com/in/jesusrosascruz/',
   summary: [
     'Soy desarrollador full stack con foco en TypeScript. Trabajo con NestJS en el backend, Angular en el frontend y Postgres (Supabase o Prisma) como base de datos, y despliego con Docker en Railway o Vercel.',
-    'Me gusta llevar un proyecto entero: modelar los datos, diseñar la API, construir la interfaz y dejarlo corriendo en producción con pruebas, healthchecks y documentación de despliegue.',
+    'Puedo aportar en todo el ciclo de un producto: modelar los datos, diseñar la API, construir la interfaz y dejarla corriendo en producción con pruebas, healthchecks y documentación de despliegue. Busco integrarme a un equipo de desarrollo donde pueda crecer a largo plazo.',
     'Mi proyecto más reciente es una oficina virtual de agentes de IA: un orquestador que recibe instrucciones por Telegram, las reparte entre agentes especializados y no da nada por terminado sin aprobación humana.',
   ],
 };

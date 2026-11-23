@@ -12,7 +12,7 @@ import { NAV } from './nav';
   template: `
     <div class="container">
       <div class="top" appReveal>
-        <p class="display big" data-reveal-item>¿Construimos algo<br /><em>juntos?</em></p>
+        <p class="display big" data-reveal-item>¿Buscas un full stack<br /><em>para tu equipo?</em></p>
         <a class="btn" [href]="'mailto:' + profile.email" appMagnetic data-reveal-item><app-icon name="mail" /> {{ profile.email }}</a>
       </div>
       <div class="grid">

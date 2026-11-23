@@ -16,7 +16,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
   template: `
     <header class="page-hero container">
       <p class="eyebrow" appReveal="left"><span class="idx">04</span>Contacto</p>
-      <h1 class="display" appSplitWords>Hablemos de <em>lo que quieres construir.</em></h1>
+      <h1 class="display" appSplitWords>Hablemos de <em>tu próxima contratación.</em></h1>
     </header>
 
     <section class="container contact">
@@ -59,7 +59,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
         </label>
         <label>
           <span class="mono">Mensaje</span>
-          <textarea formControlName="message" rows="5" placeholder="Cuéntame del proyecto o la posición"></textarea>
+          <textarea formControlName="message" rows="5" placeholder="Cuéntame de la vacante, el equipo y la empresa"></textarea>
         </label>
         @if (submitted() && form.invalid) {
           <p class="error mono">Completa tu nombre y un mensaje de al menos 10 caracteres.</p>
@@ -116,7 +116,7 @@ export default class ContactPage {
   readonly submitted = signal(false);
   private readonly motion = inject(MotionService);
 
-  readonly topics = ['Posición de trabajo', 'Proyecto freelance', 'Colaboración', 'Otro'];
+  readonly topics = ['Vacante / oferta de empleo', 'Invitación a entrevista', 'Otro'];
 
   readonly channels = [
     { icon: 'mail', label: 'Correo', value: PROFILE.email, href: `mailto:${PROFILE.email}`, external: false },
