@@ -1,0 +1,35 @@
+<div class="bar container">
+  <a routerLink="/" class="brand" aria-label="Inicio">
+    <span class="mark">{{ profile.shortName.charAt(0) }}</span>
+    <span class="brand-text">
+      <strong>{{ profile.shortName }}</strong>
+      <small class="mono">{{ profile.role }}</small>
+    </span>
+  </a>
+
+  <nav class="links" aria-label="Principal">
+    @for (item of nav; track item.path) {
+      <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" class="link">
+        <span class="mono idx">{{ item.index }}</span>{{ item.label }}
+      </a>
+    }
+  </nav>
+
+  <a routerLink="/contacto" class="btn btn-small cta" appMagnetic> <span class="pulse"></span> Disponible </a>
+
+  <button class="burger" type="button" (click)="toggle()" [attr.aria-expanded]="open()" aria-label="Menú">
+    <app-icon [name]="open() ? 'close' : 'menu'" [size]="22" />
+  </button>
+</div>
+
+<div class="overlay" #overlay [class.show]="open()" [attr.aria-hidden]="!open()">
+  <nav class="m-nav" aria-label="Móvil">
+    @for (item of nav; track item.path) {
+      <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" class="m-link">
+        <span class="mono idx">{{ item.index }}</span>
+        <span class="display">{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+  <p class="mono m-foot">{{ profile.location }} · {{ profile.email }}</p>
+</div>

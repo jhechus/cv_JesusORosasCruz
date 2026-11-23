@@ -1,0 +1,140 @@
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="grid-bg hero-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true" appParallax="-40"></div>
+  <div class="orb orb-2" aria-hidden="true" appParallax="30"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow" appReveal="left"><span class="idx">{{ profile.location }}</span>{{ profile.role }}</p>
+      <h1 class="display hero-title" appSplitWords [splitDelay]="0.2">
+        Construyo software <em>de punta a punta</em>, del esquema SQL al último pixel.
+      </h1>
+      <p class="lead hero-lead" appReveal [revealDelay]="0.6">{{ profile.tagline }}</p>
+      <div class="hero-actions" appReveal [revealDelay]="0.8">
+        <a routerLink="/experiencia/oficina-virtual" class="btn" appMagnetic data-reveal-item>
+          Ver caso de estudio <app-icon name="arrow" [size]="18" />
+        </a>
+        <a routerLink="/contacto" class="btn btn-ghost" appMagnetic data-reveal-item>
+          <app-icon name="mail" [size]="18" /> Contactar
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-frame" appTilt="6">
+        <img class="hero-photo" src="images/avatar.svg" alt="Retrato de {{ profile.name }}" width="480" height="600" fetchpriority="high" />
+        <div class="scan" aria-hidden="true"></div>
+      </div>
+      <span class="float-chip c1"><app-icon name="server" [size]="16" /> NestJS</span>
+      <span class="float-chip c2"><app-icon name="layout" [size]="16" /> Angular 19</span>
+      <span class="float-chip c3"><app-icon name="database" [size]="16" /> Postgres</span>
+      <span class="float-chip c4"><app-icon name="bot" [size]="16" /> Agentes IA</span>
+
+      <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+        <text><textPath href="#circ">DISPONIBLE · FULL STACK · REMOTO · DISPONIBLE · FULL STACK · REMOTO ·</textPath></text>
+        <circle cx="100" cy="100" r="34" />
+      </svg>
+    </div>
+
+    <ul class="hero-meta mono">
+      <li><span class="accent">01</span> TypeScript de punta a punta</li>
+      <li><span class="accent">02</span> Reglas reforzadas en la base</li>
+      <li><span class="accent">03</span> Listo para producción</li>
+    </ul>
+  </div>
+
+  <div class="scroll-hint mono" aria-hidden="true"><span></span>scroll</div>
+</section>
+
+<!-- ============ MARQUESINA ============ -->
+<div class="marquee" aria-label="Tecnologías">
+  <div class="marquee-track">
+    @for (t of marquee; track $index) {
+      <span class="m-item">{{ t }} <i>✦</i></span>
+    }
+  </div>
+</div>
+
+<!-- ============ PROYECTO DESTACADO ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading index="01" eyebrow="Proyecto destacado" lead="Mi experiencia más reciente: un equipo de agentes de IA con un orquestador, un tablero en vivo y aprobación humana obligatoria.">
+      Una oficina donde los <em>agentes</em> trabajan y tú apruebas.
+    </app-section-heading>
+
+    <a class="feature card" routerLink="/experiencia/oficina-virtual" appReveal="scale" appTilt="3">
+      <div class="feature-img">
+        <img [src]="project.cover" alt="Oficina isométrica de Chubot" loading="lazy" width="873" height="589" appParallax="-10" />
+      </div>
+      <div class="feature-body">
+        <div class="feature-head">
+          <img src="chubot-icon.png" alt="" width="48" height="48" class="logo" />
+          <div>
+            <h3 class="display">{{ project.title }} <em>· {{ project.codename }}</em></h3>
+            <p class="mono muted small">{{ project.company }} · {{ project.period }}</p>
+          </div>
+        </div>
+        <p class="muted">{{ project.summary }}</p>
+        <div class="metrics">
+          @for (m of project.metrics; track m.label) {
+            <div class="metric">
+              <strong class="display" [appCounter]="m.value">{{ m.value }}</strong>
+              <span class="mono">{{ m.label }}</span>
+            </div>
+          }
+        </div>
+        <span class="feature-link">Leer el caso completo <app-icon name="external" /></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ LO QUE HAGO ============ -->
+<section class="section services-section">
+  <div class="container">
+    <app-section-heading index="02" eyebrow="Lo que hago">
+      Tres capas, <em>un mismo</em> criterio.
+    </app-section-heading>
+
+    <div class="services" appReveal [revealStagger]="0.15">
+      @for (s of services; track s.title; let i = $index) {
+        <article class="card service" appTilt data-reveal-item>
+          <span class="num mono">0{{ i + 1 }}</span>
+          <span class="s-icon"><app-icon [name]="s.icon" [size]="26" /></span>
+          <h3 class="display">{{ s.title }}</h3>
+          <p class="muted">{{ s.text }}</p>
+          <div class="tags">
+            @for (t of s.tags; track t) {
+              <app-chip>{{ t }}</app-chip>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÍNDICE DE PÁGINAS ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading index="03" eyebrow="Recorre el CV">
+      Cada parte tiene <em>su página.</em>
+    </app-section-heading>
+    <nav class="index" appReveal [revealStagger]="0.1" aria-label="Secciones del CV">
+      @for (p of pages; track p.path) {
+        <a class="index-row" [routerLink]="p.path" data-reveal-item>
+          <span class="mono idx">{{ p.index }}</span>
+          <span class="display title">{{ p.title }}</span>
+          <span class="muted text">{{ p.text }}</span>
+          <span class="go"><app-icon [name]="p.icon" /></span>
+        </a>
+      }
+    </nav>
+  </div>
+</section>
+
+<div class="container">
+  <app-next-page title="Sobre mí" link="/sobre-mi" />
+</div>

@@ -1,0 +1,190 @@
+<!-- ============ PORTADA ============ -->
+<header class="cs-hero container">
+  <a routerLink="/experiencia" class="back mono" appReveal="left"><app-icon name="arrow" [size]="14" class="flip" /> Experiencia</a>
+  <div class="cs-title-row">
+    <img src="chubot-icon.png" alt="" width="72" height="72" class="cs-logo" appReveal="scale" />
+    <h1 class="display" appSplitWords>{{ xp.title }} <em>· {{ xp.codename }}</em></h1>
+  </div>
+  <p class="lead cs-lead" appReveal [revealDelay]="0.3">{{ xp.summary }}</p>
+  <dl class="cs-meta" appReveal [revealStagger]="0.08" [revealDelay]="0.45">
+    @for (m of meta; track m.k) {
+      <div data-reveal-item><dt class="mono">{{ m.k }}</dt><dd>{{ m.v }}</dd></div>
+    }
+  </dl>
+</header>
+
+<figure class="cs-cover container" appReveal="clip">
+  <img [src]="xp.cover" alt="Ilustración de la oficina isométrica: seis salas de cristal con un agente por escritorio" width="873" height="589" />
+  <figcaption class="mono">Ilustración de la vista "Oficina": cada agente se mueve según el estado de su tarea.</figcaption>
+</figure>
+
+<!-- ============ EL RETO ============ -->
+<section class="section container narrow">
+  <p class="eyebrow" appReveal="left"><span class="idx">01</span>El reto</p>
+  <p class="display challenge" appSplitWords="scrub">
+    Delegar trabajo de marketing, ventas y soporte a agentes de IA sin perder el control: que nada salga al mundo sin que una persona lo apruebe, y que esa regla no dependa de que el código no tenga bugs.
+  </p>
+</section>
+
+<!-- ============ CÓMO FUNCIONA (pin + chat) ============ -->
+<section class="how">
+  <div class="container how-grid">
+    <div class="how-copy">
+      <p class="eyebrow"><span class="idx">02</span>Cómo funciona</p>
+      <h2 class="display">Un mensaje, <em>varias tareas.</em></h2>
+      <ol class="how-steps">
+        <li class="how-step"><span class="mono">01</span> Le escribes a Chubot por Telegram o desde el panel.</li>
+        <li class="how-step"><span class="mono">02</span> Chubot (Claude Haiku) desglosa la instrucción y asigna agente y negocio.</li>
+        <li class="how-step"><span class="mono">03</span> El agente (Claude Sonnet) entrega un borrador y queda en espera de aprobación.</li>
+        <li class="how-step"><span class="mono">04</span> Apruebas o pides cambios con un botón. El agente rehace con tu comentario.</li>
+      </ol>
+    </div>
+
+    <div class="phone" aria-label="Ejemplo de conversación con Chubot en Telegram">
+      <div class="phone-top">
+        <img src="chubot-icon.png" alt="" width="36" height="36" />
+        <div><strong>Chubot</strong><small class="mono">bot · en línea</small></div>
+        <app-icon name="send" [size]="18" class="tg" />
+      </div>
+      <div class="phone-body">
+        @for (m of chat; track $index) {
+          <div class="msg" [class.me]="m.from === 'me'">
+            <p>{{ m.text }}</p>
+            @if (m.from === 'bot' && $index === 2) {
+              <div class="msg-actions"><span>✓ Aprobar</span><span>✎ Pedir cambios</span></div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARQUITECTURA ============ -->
+<section class="section container">
+  <app-section-heading index="03" eyebrow="Arquitectura" lead="Un solo servicio NestJS: el orquestador, la cola, el bot y la API viven juntos y comparten un bus de eventos en RxJS que alimenta el SSE del panel.">
+    Piezas aisladas, <em>un bus</em> que las une.
+  </app-section-heading>
+  <app-architecture-diagram />
+  <div class="arch-legend" appReveal [revealStagger]="0.05">
+    @for (t of xp.stack; track t) {
+      <app-chip data-reveal-item>{{ t }}</app-chip>
+    }
+  </div>
+</section>
+
+<!-- ============ PIPELINE (scroll horizontal) ============ -->
+<section class="pipe">
+  <div class="container pipe-head">
+    <p class="eyebrow"><span class="idx">04</span>Máquina de estados</p>
+    <h2 class="display">Cada transición declara <em>quién</em> puede hacerla.</h2>
+    <div class="pipe-progress" aria-hidden="true"><span></span></div>
+  </div>
+  <div class="pipe-track">
+    @for (s of pipeline; track s.key; let i = $index) {
+      <article class="state card" [style.--c]="s.color">
+        <header>
+          <span class="mono step">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="actor mono"><app-icon [name]="s.actor === 'human' ? 'user' : s.actor === 'agent' ? 'bot' : 'cpu'" [size]="14" /> {{ s.actor }}</span>
+        </header>
+        <h3 class="display">{{ s.label }}</h3>
+        <code class="mono key">{{ s.key }}</code>
+        <p class="muted">{{ s.text }}</p>
+        @if (i < pipeline.length - 1) {
+          <span class="arrow" aria-hidden="true"><app-icon name="arrow" [size]="22" /></span>
+        }
+      </article>
+    }
+  </div>
+</section>
+
+<!-- ============ SEGURIDAD (tarjetas apiladas) ============ -->
+<section class="section container">
+  <app-section-heading index="05" eyebrow="Capa de seguridad" lead="La aprobación humana está protegida en cuatro niveles. Si uno falla, el siguiente la sostiene.">
+    Defensa <em>en profundidad.</em>
+  </app-section-heading>
+  <div class="layers">
+    @for (l of security; track l.title; let i = $index) {
+      <article class="layer card" [style.top.rem]="7 + i * 1.5">
+        <div class="layer-copy">
+          <span class="mono l-num">Nivel {{ i + 1 }}</span>
+          <span class="l-icon"><app-icon [name]="l.icon" [size]="26" /></span>
+          <h3 class="display">{{ l.title }}</h3>
+          <p class="muted">{{ l.text }}</p>
+        </div>
+        <pre class="code mono"><code>{{ l.code }}</code></pre>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- ============ EQUIPO ============ -->
+<section class="section container">
+  <app-section-heading index="06" eyebrow="El equipo" lead="Cada agente tiene departamento, nombre y skills en SKILL.md que carga bajo demanda con la herramienta load_skill. Solo ve el contexto del negocio de su tarea.">
+    Seis agentes, <em>un orquestador.</em>
+  </app-section-heading>
+  <div class="agents" appReveal="scale" [revealStagger]="0.08">
+    @for (a of agents; track a.name) {
+      <article class="agent card" appTilt="10" data-reveal-item [style.--c]="a.color">
+        <div class="a-avatar display">{{ a.name.charAt(0) }}</div>
+        <div>
+          <h3>{{ a.name }}</h3>
+          <p class="mono muted small">{{ a.role }} · {{ a.department }}</p>
+        </div>
+        <ul class="a-skills">
+          @for (s of a.skills; track s) {
+            <li class="mono">{{ s }}</li>
+          }
+        </ul>
+        <span class="a-status mono"><i></i> disponible</span>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- ============ PANEL ============ -->
+<section class="section board">
+  <div class="container">
+    <app-section-heading index="07" eyebrow="El panel" lead="Angular 19 + Angular CDK. Para aprobar, arrastras la tarjeta de Espera de aprobación a Completado; para pedir cambios, a En corrección. Se actualiza solo por Server-Sent Events.">
+      Un kanban que <em>se mueve solo.</em>
+    </app-section-heading>
+    <div class="board-stage">
+      <img class="board-img" src="images/kanban-board.svg" alt="Mock del tablero kanban de Chubot con cinco columnas" width="1140" height="600" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ NÚMEROS + DEPLOY ============ -->
+<section class="section container">
+  <div class="numbers" appReveal [revealStagger]="0.1">
+    @for (m of xp.metrics; track m.label) {
+      <div class="num" data-reveal-item>
+        <strong class="display" [appCounter]="m.value">{{ m.value }}</strong>
+        <span class="mono">{{ m.label }}</span>
+      </div>
+    }
+  </div>
+
+  <app-section-heading index="08" eyebrow="Despliegue">Un contenedor, <em>cero sorpresas.</em></app-section-heading>
+  <div class="deploy" appReveal [revealStagger]="0.12">
+    @for (d of deploy; track d.title; let i = $index) {
+      <article class="d-step" data-reveal-item>
+        <span class="d-icon"><app-icon [name]="d.icon" [size]="22" /></span>
+        <h3>{{ d.title }}</h3>
+        <p class="muted">{{ d.text }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- ============ SIGUIENTES PASOS ============ -->
+<section class="section container narrow">
+  <p class="eyebrow" appReveal="left"><span class="idx">09</span>Lo que sigue</p>
+  <ul class="next-list" appReveal [revealStagger]="0.1">
+    @for (n of next; track n) {
+      <li data-reveal-item><app-icon name="rocket" [size]="20" /> {{ n }}</li>
+    }
+  </ul>
+</section>
+
+<div class="container"><app-next-page title="Habilidades" link="/habilidades" /></div>

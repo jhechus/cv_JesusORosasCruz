@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Tokens. Paleta "oficina de noche": tinta casi negra, lima eléctrica y cian,
+   el mismo lenguaje neón de la oficina isométrica de Chubot.
+   ========================================================================== */
+:root {
+  --bg: #0a0b0f;
+  --bg-2: #101219;
+  --surface: #14161f;
+  --surface-2: #1a1d28;
+  --line: rgb(255 255 255 / 0.09);
+  --ink: #eeebe3;
+  --ink-2: #b9b6ae;
+  --muted: #7d8090;
+  --lime: #c6ff3d;
+  --cyan: #3de0ff;
+  --pink: #ff7ab6;
+  --amber: #ffb347;
+  --violet: #b18cff;
+
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius: 1.25rem;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
+html.no-scroll { overflow: hidden; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Grano sutil encima de todo: le quita lo "plano" al fondo oscuro. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection { background: var(--lime); color: var(--bg); }
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4 { margin: 0; font-weight: 400; }
+p { margin: 0; }
+
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- Utilidades ---------- */
+.container { width: min(100% - 2.5rem, 78rem); margin-inline: auto; }
+.section { padding-block: clamp(5rem, 11vw, 9rem); position: relative; }
+.display { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; line-height: 1; }
+.display em { font-style: italic; }
+.mono { font-family: var(--font-mono); }
+.lead { color: var(--ink-2); font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; }
+.muted { color: var(--muted); }
+.accent { color: var(--lime); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font: 500 0.75rem/1 var(--font-mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.eyebrow .idx { color: var(--lime); }
+.eyebrow .idx::after { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--lime); margin-left: 0.75rem; vertical-align: middle; }
+
+.btn {
+  --b: var(--lime);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--b);
+  background: var(--b);
+  color: var(--bg);
+  font: 600 0.95rem/1 var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.4s var(--ease);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ink);
+  transform: translateY(101%);
+  border-radius: inherit;
+  transition: transform 0.5s var(--ease);
+}
+.btn:hover::before { transform: translateY(0); }
+.btn-ghost { background: transparent; color: var(--ink); --b: var(--line); }
+.btn-ghost::before { background: var(--lime); }
+.btn-ghost:hover { color: var(--bg); }
+.btn-small { padding: 0.6rem 1rem; font-size: 0.85rem; }
+
+.card {
+  background: linear-gradient(180deg, var(--surface), var(--bg-2));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+/* Brillo que sigue al puntero (lo alimenta appTilt con --mx/--my). */
+.tilt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  background: radial-gradient(500px circle at var(--mx, 50%) var(--my, 50%), rgb(198 255 61 / 0.1), transparent 40%);
+}
+.tilt:hover::after { opacity: 1; }
+
+.grid-bg {
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+}
+
+/* Palabras partidas por appSplitWords: cada una dentro de una máscara. */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.w > span { display: inline-block; will-change: transform; }
+
+/* ---------- Estado inicial de las animaciones ----------
+   html.motion lo añade un script en index.html solo si hay JS y no se pidió menos movimiento.
+   Así el HTML prerenderizado no parpadea y sin JS todo es visible. */
+html.motion [data-reveal]:not(:has([data-reveal-item])),
+html.motion [data-reveal-item],
+html.motion [data-split='rise'] { opacity: 0; }
+
+/* ---------- Transición entre páginas (View Transitions API) ---------- */
+@keyframes vt-out { to { opacity: 0; transform: translateY(-2rem) scale(0.98); filter: blur(6px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(3rem); } }
+::view-transition-old(root) { animation: vt-out 0.45s var(--ease) both; }
+::view-transition-new(root) { animation: vt-in 0.7s var(--ease) 0.15s both; }
+::view-transition-old(site-header), ::view-transition-new(site-header) { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}

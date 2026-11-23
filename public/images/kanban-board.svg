@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" role="img" aria-label="Tablero kanban de cinco columnas con tareas de los agentes">
+<rect width="1140" height="600" rx="22" fill="#0a0b0f" stroke="#2a2e3d"/>
+<rect width="1140" height="64" rx="22" fill="#0f1117"/><rect y="42" width="1140" height="22" fill="#0f1117"/>
+<circle cx="32" cy="32" r="6" fill="#ff5f57"/><circle cx="52" cy="32" r="6" fill="#febc2e"/><circle cx="72" cy="32" r="6" fill="#28c840"/>
+<text x="104" y="37" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="14" font-weight="700">Chubot · Tablero</text>
+<rect x="880" y="18" width="110" height="28" rx="14" fill="none" stroke="#2a2e3d"/><text x="935" y="36" fill="#7d8090" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">osmaritech ▾</text>
+<rect x="1002" y="18" width="110" height="28" rx="14" fill="#c6ff3d"/><text x="1057" y="36" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle">+ Tarea</text>
+<circle cx="1094" cy="76" r="0" />
+<text x="1104" y="80" fill="#c6ff3d" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="end">● SSE en vivo</text>
+<rect x="36" y="92" width="198" height="470" rx="14" fill="#11131a" stroke="#2a2e3d"/>
+  <circle cx="54" cy="117" r="5" fill="#7d8090"/><text x="66" y="121" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700">Pendiente</text>
+  <text x="216" y="121" fill="#7d8090" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">1</text><g><rect x="46" y="140" width="178" height="104" rx="10" fill="#1a1d28" stroke="#2a2e3d"/>
+    <rect x="58" y="154" width="54" height="16" rx="8" fill="#3de0ff" fill-opacity=".15"/><text x="66" y="165.5" fill="#3de0ff" font-family="JetBrains Mono, monospace" font-size="9.5">bruno</text>
+    <text x="58" y="190" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">Lista de prospectos CDMX</text>
+    <rect x="58" y="202" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="58" y="214" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="206" cy="228" r="9" fill="#3de0ff"/><text x="206" y="231.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">B</text>
+    </g><rect x="250" y="92" width="198" height="470" rx="14" fill="#11131a" stroke="#2a2e3d"/>
+  <circle cx="268" cy="117" r="5" fill="#3de0ff"/><text x="280" y="121" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700">En progreso</text>
+  <text x="430" y="121" fill="#7d8090" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">2</text><g><rect x="260" y="140" width="178" height="104" rx="10" fill="#1a1d28" stroke="#2a2e3d"/>
+    <rect x="272" y="154" width="54" height="16" rx="8" fill="#ffb347" fill-opacity=".15"/><text x="280" y="165.5" fill="#ffb347" font-family="JetBrains Mono, monospace" font-size="9.5">mateo</text>
+    <text x="272" y="190" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">3 posts de lanzamiento</text>
+    <rect x="272" y="202" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="272" y="214" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="420" cy="228" r="9" fill="#ffb347"/><text x="420" y="231.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">M</text>
+    </g><g><rect x="260" y="258" width="178" height="104" rx="10" fill="#1a1d28" stroke="#2a2e3d"/>
+    <rect x="272" y="272" width="54" height="16" rx="8" fill="#b18cff" fill-opacity=".15"/><text x="280" y="283.5" fill="#b18cff" font-family="JetBrains Mono, monospace" font-size="9.5">iris</text>
+    <text x="272" y="308" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">Guion de video 30s</text>
+    <rect x="272" y="320" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="272" y="332" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="420" cy="346" r="9" fill="#b18cff"/><text x="420" y="349.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">I</text>
+    </g><rect x="464" y="92" width="198" height="470" rx="14" fill="#11131a" stroke="#2a2e3d"/>
+  <circle cx="482" cy="117" r="5" fill="#ffb347"/><text x="494" y="121" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700">Espera de aprobación</text>
+  <text x="644" y="121" fill="#7d8090" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">2</text><g><rect x="474" y="140" width="178" height="104" rx="10" fill="#1a1d28" stroke="#ffb347" stroke-opacity=".7"/>
+    <rect x="486" y="154" width="54" height="16" rx="8" fill="#5cf2a6" fill-opacity=".15"/><text x="494" y="165.5" fill="#5cf2a6" font-family="JetBrains Mono, monospace" font-size="9.5">sofi</text>
+    <text x="486" y="190" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">Respuesta a cliente</text>
+    <rect x="486" y="202" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="486" y="214" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="634" cy="228" r="9" fill="#5cf2a6"/><text x="634" y="231.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">S</text>
+    </g><g><rect x="474" y="258" width="178" height="104" rx="10" fill="#1a1d28" stroke="#ffb347" stroke-opacity=".7"/>
+    <rect x="486" y="272" width="54" height="16" rx="8" fill="#ff7ab6" fill-opacity=".15"/><text x="494" y="283.5" fill="#ff7ab6" font-family="JetBrains Mono, monospace" font-size="9.5">luna</text>
+    <text x="486" y="308" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">Email de bienvenida</text>
+    <rect x="486" y="320" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="486" y="332" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="634" cy="346" r="9" fill="#ff7ab6"/><text x="634" y="349.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">L</text>
+    </g><rect x="678" y="92" width="198" height="470" rx="14" fill="#11131a" stroke="#2a2e3d"/>
+  <circle cx="696" cy="117" r="5" fill="#ff7ab6"/><text x="708" y="121" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700">En corrección</text>
+  <text x="858" y="121" fill="#7d8090" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">1</text><g><rect x="688" y="140" width="178" height="104" rx="10" fill="#1a1d28" stroke="#2a2e3d"/>
+    <rect x="700" y="154" width="54" height="16" rx="8" fill="#c6ff3d" fill-opacity=".15"/><text x="708" y="165.5" fill="#c6ff3d" font-family="JetBrains Mono, monospace" font-size="9.5">nico</text>
+    <text x="700" y="190" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">Landing de precios</text>
+    <rect x="700" y="202" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="700" y="214" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="848" cy="228" r="9" fill="#c6ff3d"/><text x="848" y="231.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">N</text>
+    </g><rect x="892" y="92" width="198" height="470" rx="14" fill="#11131a" stroke="#2a2e3d"/>
+  <circle cx="910" cy="117" r="5" fill="#c6ff3d"/><text x="922" y="121" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="700">Completado</text>
+  <text x="1072" y="121" fill="#7d8090" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">2</text><g><rect x="902" y="140" width="178" height="104" rx="10" fill="#1a1d28" stroke="#2a2e3d"/>
+    <rect x="914" y="154" width="54" height="16" rx="8" fill="#ff7ab6" fill-opacity=".15"/><text x="922" y="165.5" fill="#ff7ab6" font-family="JetBrains Mono, monospace" font-size="9.5">luna</text>
+    <text x="914" y="190" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">Copy para Instagram</text>
+    <rect x="914" y="202" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="914" y="214" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="1062" cy="228" r="9" fill="#ff7ab6"/><text x="1062" y="231.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">L</text>
+    </g><g><rect x="902" y="258" width="178" height="104" rx="10" fill="#1a1d28" stroke="#2a2e3d"/>
+    <rect x="914" y="272" width="54" height="16" rx="8" fill="#5cf2a6" fill-opacity=".15"/><text x="922" y="283.5" fill="#5cf2a6" font-family="JetBrains Mono, monospace" font-size="9.5">sofi</text>
+    <text x="914" y="308" fill="#eeebe3" font-family="Manrope, sans-serif" font-size="12.5" font-weight="600">FAQ de soporte</text>
+    <rect x="914" y="320" width="130" height="6" rx="3" fill="#2a2e3d"/><rect x="914" y="332" width="96" height="6" rx="3" fill="#2a2e3d"/>
+    <circle cx="1062" cy="346" r="9" fill="#5cf2a6"/><text x="1062" y="349.5" fill="#0a0b0f" font-family="Manrope, sans-serif" font-size="9" font-weight="800" text-anchor="middle">S</text>
+    </g>
+</svg>
